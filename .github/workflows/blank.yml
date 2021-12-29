@@ -21,7 +21,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    if: >
+      github.event.workflow_run.conclusion == 'success'
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -31,5 +32,5 @@ jobs:
       - name: Download readme artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: ${{ github.event.workflow_run.workflow_id }}
+          workflow: blank.yml
           name: readme
