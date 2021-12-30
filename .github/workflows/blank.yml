@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Download readme artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           workflow: blank.yml
           name: readme
