@@ -30,5 +30,4 @@ jobs:
       - name: Download readme artifact
         uses: actions/download-artifact@v2
         with:
-          workflow: blank.yml
           name: readme
